@@ -24,3 +24,5 @@
 /shared/
 # Ignore Byebug command history file.
 .byebug_history
+.gitignore
+app/views/api/
