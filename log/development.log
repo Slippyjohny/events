@@ -40940,3 +40940,127 @@ Processing by API::EventsController#index as */*
 Completed 200 OK in 25ms (Views: 0.7ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-02-08 15:48:36 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (17.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d143a58b85164dfe64f68cc5a8c4e233ff9f4a13"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d143a58b85164dfe64f68cc5a8c4e233ff9f4a13"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 135ms (ActiveRecord: 46.1ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2017-02-08 15:48:37 +0200
+Processing by Clearance::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d143a58b85164dfe64f68cc5a8c4e233ff9f4a13"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d143a58b85164dfe64f68cc5a8c4e233ff9f4a13"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (27.2ms)
+  Rendered sessions/new.html.erb within layouts/application (33.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d143a58b85164dfe64f68cc5a8c4e233ff9f4a13"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d143a58b85164dfe64f68cc5a8c4e233ff9f4a13"], ["LIMIT", 1]]
+Completed 200 OK in 741ms (Views: 736.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-02-08 15:48:50 +0200
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"user1@mail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d143a58b85164dfe64f68cc5a8c4e233ff9f4a13"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@mail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d143a58b85164dfe64f68cc5a8c4e233ff9f4a13"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.0ms)
+  Rendered sessions/new.html.erb within layouts/application (7.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d143a58b85164dfe64f68cc5a8c4e233ff9f4a13"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d143a58b85164dfe64f68cc5a8c4e233ff9f4a13"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d143a58b85164dfe64f68cc5a8c4e233ff9f4a13"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 287ms (Views: 133.8ms | ActiveRecord: 25.4ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-02-08 15:49:10 +0200
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"user1@mail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (9.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d143a58b85164dfe64f68cc5a8c4e233ff9f4a13"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@mail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 130ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-08 15:49:10 +0200
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "b4f190b31264a5ffc5bc21867587ee4125768ea6"], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attached_events_users" ON "events"."id" = "attached_events_users"."event_id" WHERE "attached_events_users"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (38.9ms)
+  [1m[36mNotification Load (20.6ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."attached_user_id" = $1[0m  [["attached_user_id", 1]]
+  Rendered notifications/_notifications_nav.html.erb (26.3ms)
+Completed 200 OK in 331ms (Views: 144.1ms | ActiveRecord: 31.0ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2017-02-08 15:49:15 +0200
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "b4f190b31264a5ffc5bc21867587ee4125768ea6"], ["LIMIT", 1]]
+  [1m[35m (12.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.7ms)[0m  [1m[33mUPDATE "users" SET "remember_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_token", "e3d7fc374a795c475e41b28f2b8fca1fd2482288"], ["updated_at", 2017-02-08 13:49:15 UTC], ["id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 39ms (ActiveRecord: 26.6ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2017-02-08 15:49:15 +0200
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (3.1ms)
+  Rendered sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 80ms (Views: 79.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-02-08 15:49:29 +0200
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"user2@mail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user2@mail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 108ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-08 15:49:29 +0200
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "0839d38731c81735fe0951b431c72c12b7391882"], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attached_events_users" ON "events"."id" = "attached_events_users"."event_id" WHERE "attached_events_users"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered events/index.html.erb within layouts/application (5.7ms)
+  [1m[36mNotification Load (0.5ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."attached_user_id" = $1[0m  [["attached_user_id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."attached_user_id" = $1[0m  [["attached_user_id", 2]]
+  Rendered notifications/_notifications_nav.html.erb (20.5ms)
+Completed 200 OK in 154ms (Views: 115.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/events/4" for 127.0.0.1 at 2017-02-08 15:49:36 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "0839d38731c81735fe0951b431c72c12b7391882"], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "users".id FROM "users" INNER JOIN "attached_events_users" ON "users"."id" = "attached_events_users"."user_id" WHERE "attached_events_users"."event_id" = $1[0m  [["event_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered invites/_form.html.erb (155.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDocument Exists (6.6ms)[0m  [1m[34mSELECT  1 AS one FROM "documents" WHERE "documents"."event_id" = $1 LIMIT $2[0m  [["event_id", 4], ["LIMIT", 1]]
+  Rendered documents/_form.html.erb (20.4ms)
+  Rendered comments/_form.html.erb (28.4ms)
+  [1m[36mComment Load (7.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["event_id", 4], ["LIMIT", 3]]
+  Rendered comments/_comments.html.erb (14.2ms)
+  Rendered events/show.html.erb within layouts/application (262.9ms)
+  [1m[36mNotification Load (0.7ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."attached_user_id" = $1[0m  [["attached_user_id", 2]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."attached_user_id" = $1[0m  [["attached_user_id", 2]]
+  Rendered notifications/_notifications_nav.html.erb (7.8ms)
+Completed 200 OK in 406ms (Views: 340.1ms | ActiveRecord: 30.8ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-02-08 15:49:36 +0200
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-02-08 15:49:37 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "EventsChannel"
