@@ -1,9 +1,11 @@
 
 lock '3.7.2'
+require 'capistrano/local_precompile'
 set :application, 'EventsSystem'
 set :repo_url, 'https://github.com/Slippyjohny/events.git' # Edit this to match your repository
 set :branch, :master
 set :deploy_to, '/home/deployer/events'
+set :turbosprockets_enabled, true
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
@@ -25,3 +27,4 @@ set :puma_workers, 0
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
+
