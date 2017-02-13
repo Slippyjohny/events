@@ -1,6 +1,6 @@
 class API::EventsController < API::ApplicationController
   load_and_authorize_resource
-
+respond_to :json
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -24,17 +24,15 @@ class API::EventsController < API::ApplicationController
     else
       events=current_user.events
       attached=current_user.attached_events
-      respond_to do |format|
-        format.json { render json: events+attached }
-      end
+      render json: events+attached
     end
   end
 
 
   def show
-    respond_to do |format|
-      format.json { render json: @event }
-    end
+
+   render json: @event
+
   end
 
   def new

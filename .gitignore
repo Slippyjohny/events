@@ -19,6 +19,7 @@
 /uploads/*
 .idea
 /config/database.yml
+/config/application.yml
 /Procfile
 /config/deploy/
 /shared/

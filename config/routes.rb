@@ -3,6 +3,7 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
 
 
+  use_doorkeeper
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   root 'events#index'
   mount Sidekiq::Web, at: '/sidekiq'
   namespace :api, path: "api" do
+    get 'user', to: "users#show"
     post 'authenticate', to: 'authentication#authenticate'
     resources :users, only: [:create]
     resources :events do

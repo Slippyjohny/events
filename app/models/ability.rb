@@ -18,6 +18,7 @@ class Ability
         event.user_id==user.id
       end
       can [:create], Document
+      can [:show], Document
       can :destroy, Document do |doc|
         doc.user_id==user.id
       end

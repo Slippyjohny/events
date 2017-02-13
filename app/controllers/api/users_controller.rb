@@ -1,21 +1,10 @@
 class API::UsersController < API::ApplicationController
-  skip_before_action :authenticate_request
+respond_to :json
 
-  def create
-    @user =User.create(user_params)
-    respond_to do |format|
-      if @user.save
-        format.json { render json: @user }
-      else
-        format.json { render json: @user.errors }
-      end
-    end
+  def show
+    render json: current_user.as_json(except: [:password_digest, :encrypted_password, :confirmation_token,:remember_token, :token])
   end
 
-  private
-  def user_params
-    params.permit(:email, :password, :password_confirmation)
-  end
 end
 
 
