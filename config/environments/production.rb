@@ -27,8 +27,10 @@ Rails.application.configure do
 
   config.serve_static_assets=true
   config.assets.compress=true
-  config.assets.compile =false
+  config.assets.compile =true
+  config.assets.initialize_on_precompile=false
   config.assets.digest=true
+  config.action_dispatch.x_sendfile_header='X-Accel-Redirect'
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
