@@ -25,9 +25,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
 
-  config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.public_file_server.enabled = true
-
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
