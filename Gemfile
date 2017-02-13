@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'rest-client'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
+gem 'therubyracer', :platform => :ruby
 gem 'font-awesome-rails'
 gem 'cancancan'
 gem 'email_validator'
