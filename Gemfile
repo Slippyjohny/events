@@ -44,6 +44,7 @@ gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
 gem 'foreman'
+gem "bugsnag"
 # Use jquery as the JavaScript library
 gem 'has_secure_token'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

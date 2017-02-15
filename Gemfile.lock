@@ -52,6 +52,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bugsnag (5.2.0)
     builder (3.2.3)
     byebug (9.0.6)
     cancancan (1.16.0)
@@ -293,6 +294,7 @@ DEPENDENCIES
   active_model_serializers
   bcrypt (~> 3.1.7)
   bootstrap-sass
+  bugsnag
   byebug
   cancancan
   capistrano
