@@ -66,6 +66,14 @@ gem 'responders'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem "selenium-webdriver"
+  gem 'rails-controller-testing'
+  gem 'poltergeist'
+  gem "database_cleaner"
+
 
 end
 

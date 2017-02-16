@@ -16,5 +16,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_path
+    flash[:alert] = "You aren't allowed to do that."
+  end
 
 end
