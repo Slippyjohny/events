@@ -1,9 +1,10 @@
-<%= simple_form_for(event) do |f| %>
-    <% if event.errors.any? %>
+
+<%= simple_form_for @event, remote:true do |f| %>
+    <% if @event.errors.any? %>
 
 
 
-          <% event.errors.full_messages.each do |message| %>
+          <% @event.errors.full_messages.each do |message| %>
 
               <div class="alert alert-alert">
                 <li><%= message %></li>
