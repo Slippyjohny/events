@@ -84,8 +84,6 @@ In Simple Rails APP, if user not registered, invite link will be sent(by EmailWo
 
 
 
-GIT REPO:
-https://github.com/Slippyjohny/uptech_events_system.git
 
 
 
