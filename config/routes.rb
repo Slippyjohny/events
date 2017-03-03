@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :notifications, only: %i{index show}
   root 'events#index'
   mount Sidekiq::Web, at: '/sidekiq'
+
   namespace :api, path: "api" do
     get 'user', to: "users#show"
     post 'authenticate', to: 'authentication#authenticate'

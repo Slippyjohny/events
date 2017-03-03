@@ -1,9 +1,7 @@
 FactoryGirl.define do
   factory :invite do
     email "userpppp@example.com"
-    token Digest::SHA1.hexdigest([event_id, Time.now, rand].join)
-
+    association :event, :factory => [:event]
+    token Digest::SHA1.hexdigest([Time.now].join)
   end
-
-
 end
