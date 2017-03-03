@@ -46,7 +46,7 @@
 
         <% if  signed_in?%>
             <div class="navbar-right">
-              <p class="navbar-text">
+              <p class="navbar-text" id="signed" onclick="onClick('<%= current_user.email %>')" >
                 Signed in as <%= current_user.email %>
               </p>
               <ul class="nav navbar-nav">

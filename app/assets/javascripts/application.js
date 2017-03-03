@@ -14,4 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require cable
+//= require bootstrap
+//= require events
 //= require_tree .
+
+
+var onClick=function (value) {
+    alert(value);
+    window.location.href="/events/new"
+}
+
+
